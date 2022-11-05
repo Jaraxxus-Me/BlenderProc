@@ -209,9 +209,9 @@ def load_bop_intrinsics(bop_dataset_path: str, split: str = "test", cam_type: st
         cam_p['K'][1, 2] = split_p['im_size'][1] / 2
 
     # set camera intrinsics
-    CameraUtility.set_intrinsics_from_K_matrix(cam_p['K'], split_p['im_size'][0], split_p['im_size'][1])
+    CameraUtility.set_intrinsics_from_K_matrix(cam_p['K'], cam_p['im_size'][0], cam_p['im_size'][1])
 
-    return cam_p['K'], split_p['im_size'][0], split_p['im_size'][1]
+    return cam_p['K'], cam_p['im_size'][0], cam_p['im_size'][1]
 
 
 class _BopLoader:
